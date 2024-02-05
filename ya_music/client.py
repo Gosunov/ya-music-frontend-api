@@ -82,7 +82,7 @@ class Client():
             position = 0
             if reason == 'end':
                 position = 2.063673469387755
-            timestamp = int(time())
+            timestamp = int(time() * 1000)
             url = 'https://music.yandex.ru/api/v2.1/handlers/track/%s/web-album_track-album-album-main/feedback/%s?__t=%d' % (track_id, reason, timestamp)
             headers = {
                 'Host': 'music.yandex.ru',
@@ -111,7 +111,6 @@ class Client():
                         'position':   position,
                         'played':     position,
                         'playId':     'a46553201b8607e26741aae6f31d2b961b11a0b21:%s:40079980362412815' % track_id.split(':')[0],
-                        'addTracksToPlayerTime': '7884796348621496-1706969449',
                         'context':    'album',
                         'cm':         'pt',
                     }
